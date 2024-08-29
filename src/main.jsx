@@ -2,9 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import {createBrowserRouter ,RouterProvider } from 'react-router-dom'
-import {Login,Register,Users,Books,ErrorPage} from './pages/index'
+import {LoginPage,RegisterPage,UsersPage,BooksPage,ErrorPage} from './pages/index'
 import TodoApp  from './component/todo/TodoApp'
-
+import {AuthWrapper} from './component/context/AuthContext'
 
 const router = createBrowserRouter([
   {
@@ -18,27 +18,30 @@ const router = createBrowserRouter([
       },
       {
         path: "/user",
-        element: < Users/>,
+        element: < UsersPage/>,
       },
       {
         path: "/books",
-        element: < Books/>,
+        element: < BooksPage/>,
       },
 
     ]
   },
   {
     path: "/login",
-    element: <Login />,
+    element: <LoginPage />,
   },
   {
     path: "/register",
-    element: <Register/>,
+    element: <RegisterPage/>,
   },
  
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
+  <AuthWrapper>
      <RouterProvider router={router} />
+  </AuthWrapper>
+    
   // </React.StrictMode>,
 )
