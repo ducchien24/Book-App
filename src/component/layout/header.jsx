@@ -12,7 +12,7 @@ import { AuthContext } from "../context/AuthContext";
 import { logOutApi } from "../../services/api/apiUser";
 const Header = () => {
   const { user, setUser } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
   const navigate = useNavigate();
   const [current, setCurrent] = useState("");
   const handLogOut = async () => {
@@ -90,7 +90,7 @@ const Header = () => {
   ];
 
   const onClick = (e) => {
-    console.log("click ", e);
+    // console.log("click ", e);
     setCurrent(e.key);
   };
 

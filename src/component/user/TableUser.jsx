@@ -68,7 +68,6 @@ const TableUser = ({ dataUsers, loadData ,current,pageSize,total,setCurrent,setP
             description="Are you sure to delete this user?"
             onConfirm={() => {
               handleDeleteUser(record._id);
-              console.log(record._id);
             }}
             onCancel={cancel}
             okText="Yes"
@@ -82,7 +81,7 @@ const TableUser = ({ dataUsers, loadData ,current,pageSize,total,setCurrent,setP
     },
   ];
   const cancel = (e) => {
-    console.log(e);
+    // console.log(e);
     message.error("Click on No");
   };
   const handleDeleteUser = async (_id) => {
@@ -103,7 +102,7 @@ const TableUser = ({ dataUsers, loadData ,current,pageSize,total,setCurrent,setP
   };
 
   const onChange = (pagination, filters, sorter, extra) => {
-    console.log({pagination, filters, sorter, extra})
+    // console.log({pagination, filters, sorter, extra})
     if(pagination&&pagination.current)
     {
       if(+pagination.current!==+current){

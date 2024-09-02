@@ -16,7 +16,7 @@ const Register = () => {
   const navigate = useNavigate();
   const [form] = Form.useForm();
   const onFinish = async (values) => {
-    console.log("Success:", values);
+    // console.log("Success:", values);
     const res = await RegisterAPI(
       values.fullName,
       values.email,
@@ -36,7 +36,7 @@ const Register = () => {
       });
   };
   const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
+    // console.log("Failed:", errorInfo);
   };
   const validateEmail = (rule, value, callback) => {
     const emailRegex = /^[A-Za-z0-9+_.-]+@(.+)$/;
@@ -68,7 +68,7 @@ const Register = () => {
             form={form}
             layout="vertical"
             name="register"
-
+           
             initialValues={{
               remember: true,
             }}

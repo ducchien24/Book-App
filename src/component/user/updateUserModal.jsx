@@ -23,13 +23,12 @@ const UpdateUserModal = ({isModalOpen,setIsModalOpen,dataUpdate,setDataUpdate,lo
     }
   };
 useEffect(() => {
-    console.log(dataUpdate)
+    // console.log(dataUpdate)
 if (dataUpdate) {
     setFullName(dataUpdate.fullName)
     setPhone(dataUpdate.phone)
     setId(dataUpdate._id)
 }
- console.log('trong uef')
  
 }, [dataUpdate]);
   const resetValue= () =>{ 

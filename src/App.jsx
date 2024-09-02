@@ -5,11 +5,13 @@ import {Outlet} from 'react-router-dom'
 import {getAccountApi} from './services/api/apiUser'
 import {AuthContext} from './component/context/AuthContext'
 function App() {
-  const{setUser}=useContext(AuthContext)
+  const{setUser,location}=useContext(AuthContext) 
+  console.log(location)
+  // const{location}=useContext(AuthContext)
  const fetchUserInfo = async()=>{
   const res= await getAccountApi()
   if(res.data)
-    console.log('check user data:' ,res.data)
+    // console.log('check user data:' ,res.data)
     setUser(res.data.user)
  }
 

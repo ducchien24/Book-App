@@ -23,7 +23,7 @@ const Login = () => {
   const onFinish = async (values) => {
     setLoading(true)
     const res = await LoginAPI(values.email, values.password);
-    console.log(res);
+    // console.log(res);
     if (res.data) {
       localStorage.setItem("access_token",res.data.access_token)
       setUser(res.data.user)
@@ -38,7 +38,7 @@ const Login = () => {
       setLoading(false)
   };
   const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
+    // console.log("Failed:", errorInfo);
   };
   const validateEmail = (rule, value, callback) => {
     const emailRegex = /^[A-Za-z0-9+_.-]+@(.+)$/;
@@ -48,7 +48,7 @@ const Login = () => {
       callback();
     }
   };
-  console.log(1);
+
   return (
     <Row justify={"center"} layout="horizontal">
       <Col xs={24} md={16} lg={8}>

@@ -11,26 +11,24 @@ const DetailUser = ({ dataUser, setIsOpenDrawe, isOpenDrawe ,loadData}) => {
   };
 
   const handleClickImg = (e) => {
-    if (!e.target.value || e.target.files.length === 0) {
+    if (!e.target.files || e.target.files.length === 0) {
       setSelectedFile(null);
       setPreview(null);
     }
     const file = e.target.files[0];
-    console.log(file);
+    // console.log(file);
     if (file) {
-      console.log("hehe");
+      
       setSelectedFile(file);
       setPreview(URL.createObjectURL(file));
     }
-    console.log(selectedFile);
-    console.log(preview);
   };
-  console.log(selectedFile);
-  console.log(preview);
+  // console.log(selectedFile);
+  // console.log(preview);
 
   const handUpdateUserAvatar = async() =>{
     const resUpload= await handUploadFile(selectedFile,'avatar')
-    console.log("resUpload",resUpload)
+    // console.log("resUpload",resUpload)
     if(resUpload){
        await UpdateUserAPI(dataUser._id,dataUser.fullName,dataUser.phone,resUpload.data.fileUploaded)
         setSelectedFile(null)
@@ -48,7 +46,7 @@ const DetailUser = ({ dataUser, setIsOpenDrawe, isOpenDrawe ,loadData}) => {
         description:'file không hợp lệ hoặc file quá lớn!'
       })
     }
-    console.log(resUpload)
+    // console.log(resUpload)
   }
   return (
     <Drawer

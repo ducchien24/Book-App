@@ -21,7 +21,7 @@ const UsersPage = () => {
     }
     
   };
-console.log("current",current)
+// console.log("current",current)
   return (
     <div>
       <FormUser loadData={loadData} />
