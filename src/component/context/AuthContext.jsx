@@ -11,13 +11,13 @@ export const AuthContext = createContext({
   id: "",
 });
 export const useCustomLocation = () => {
-    const [current, setCurrent] = useState('home');
+  const [current, setCurrent] = useState("home");
   const location = useLocation();
   if (location && location.pathname) {
     console.log(location);
-    const allRouter = ["users", "books",'login'];
+    const allRouter = ["users", "books", "login"];
     const current = allRouter.find((item) => `/${item}` === location.pathname);
-    current?setCurrent(current):setCurrent('home')
+    current ? setCurrent(current) : setCurrent("home");
   }
   return location;
 };
@@ -32,7 +32,7 @@ export const AuthWrapper = (props) => {
     id: "",
   });
   return (
-    <AuthContext.Provider value={{ user, setUser, location, }}>
+    <AuthContext.Provider value={{ user, setUser, location }}>
       {props.children}
     </AuthContext.Provider>
   );

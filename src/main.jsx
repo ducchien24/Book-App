@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import {createBrowserRouter ,RouterProvider } from 'react-router-dom'
-import {LoginPage,RegisterPage,UsersPage,BooksPage,ErrorPage} from './pages/index'
+import {LoginPage,RegisterPage,UsersPage,BooksPage,ErrorPage,PrivateRoute} from './pages/index'
 import TodoApp  from './component/todo/TodoApp'
 import {AuthWrapper} from './component/context/AuthContext'
 
@@ -22,7 +22,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/books",
-        element: < BooksPage/>,
+        element: <PrivateRoute>
+          < BooksPage/>
+        </PrivateRoute>,
       },
 
     ]
