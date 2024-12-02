@@ -83,7 +83,7 @@ const Login = () => {
                 },
               ]}
             >
-              <Input />
+              <Input placeholder="admin@gmail.com"  />
             </Form.Item>
 
             <Form.Item
@@ -96,7 +96,9 @@ const Login = () => {
                 },
               ]}
             >
-              <Input.Password  onKeyDown={(event)=>{ 
+              <Input.Password 
+              placeholder="123456" 
+              onKeyDown={(event)=>{  
                 if(event.key==='Enter') form.submit()}}/>
             </Form.Item>
 
